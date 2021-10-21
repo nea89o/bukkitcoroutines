@@ -1,0 +1,4 @@
+debug/
+.gradle/
+.idea/
+build/
