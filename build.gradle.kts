@@ -52,7 +52,7 @@ val testShadowJar by tasks.creating(ShadowJar::class) {
     mergeServiceFiles()
 }
 
-build.dependsOn(testShadowJar)
+build.dependsOn(sourcesJar, dokkaHtmlJar, dokkaJavadocJar, jar)
 
 val prepareSpigotPlugins by tasks.getting(Copy::class) {
     from(testShadowJar)
