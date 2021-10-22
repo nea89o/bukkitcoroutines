@@ -1,0 +1,3 @@
+name: bukkitcoroutines
+version: 1.0.0
+main: moe.nea89.bukkitcoroutines.test.TestPlugin
