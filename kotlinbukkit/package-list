@@ -1,0 +1,19 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:moe.nea89.bukkitcoroutines////PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/index.html
+$dokka.location:moe.nea89.bukkitcoroutines//launchCoroutineAsync/org.bukkit.plugin.Plugin#kotlin.coroutines.SuspendFunction1[moe.nea89.bukkitcoroutines.BukkitCoroutine[kotlin.Unit],kotlin.Unit]/PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/launch-coroutine-async.html
+$dokka.location:moe.nea89.bukkitcoroutines//launchCoroutineOnMain/org.bukkit.plugin.Plugin#kotlin.coroutines.SuspendFunction1[moe.nea89.bukkitcoroutines.BukkitCoroutine[kotlin.Unit],kotlin.Unit]/PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/launch-coroutine-on-main.html
+$dokka.location:moe.nea89.bukkitcoroutines//startCoroutineOnSameThread/org.bukkit.plugin.Plugin#kotlin.coroutines.SuspendFunction1[moe.nea89.bukkitcoroutines.BukkitCoroutine[kotlin.Unit],kotlin.Unit]/PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/start-coroutine-on-same-thread.html
+$dokka.location:moe.nea89.bukkitcoroutines/BukkitCoroutine///PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/-bukkit-coroutine/index.html
+$dokka.location:moe.nea89.bukkitcoroutines/BukkitCoroutine/BukkitCoroutine/#org.bukkit.plugin.Plugin#java.util.concurrent.CompletableFuture[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/-bukkit-coroutine/-bukkit-coroutine.html
+$dokka.location:moe.nea89.bukkitcoroutines/BukkitCoroutine/callOnAsync/#kotlin.Function0[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/-bukkit-coroutine/call-on-async.html
+$dokka.location:moe.nea89.bukkitcoroutines/BukkitCoroutine/callOnMain/#kotlin.Function0[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/-bukkit-coroutine/call-on-main.html
+$dokka.location:moe.nea89.bukkitcoroutines/BukkitCoroutine/future/#/PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/-bukkit-coroutine/future.html
+$dokka.location:moe.nea89.bukkitcoroutines/BukkitCoroutine/keepThread/#kotlin.coroutines.SuspendFunction1[moe.nea89.bukkitcoroutines.BukkitCoroutine[TypeParam(bounds=[kotlin.Any?])],TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/-bukkit-coroutine/keep-thread.html
+$dokka.location:moe.nea89.bukkitcoroutines/BukkitCoroutine/plugin/#/PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/-bukkit-coroutine/plugin.html
+$dokka.location:moe.nea89.bukkitcoroutines/BukkitCoroutine/switchToAsync/#/PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/-bukkit-coroutine/switch-to-async.html
+$dokka.location:moe.nea89.bukkitcoroutines/BukkitCoroutine/switchToMain/#/PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/-bukkit-coroutine/switch-to-main.html
+$dokka.location:moe.nea89.bukkitcoroutines/BukkitCoroutine/waitAndContinueInSameThread/#kotlin.time.Duration/PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/-bukkit-coroutine/wait-and-continue-in-same-thread.html
+$dokka.location:moe.nea89.bukkitcoroutines/BukkitCoroutine/waitTicksAndContinueInSameThread/#kotlin.Long/PointingToDeclaration/kotlinbukkit/moe.nea89.bukkitcoroutines/-bukkit-coroutine/wait-ticks-and-continue-in-same-thread.html
+moe.nea89.bukkitcoroutines
+
