@@ -8,6 +8,7 @@ plugins {
     id("kr.entree.spigradle") version "2.2.4"
     id("com.github.johnrengelman.shadow") version "6.1.0"
     `maven-publish`
+    signing
 }
 
 group = "moe.nea89"
@@ -22,7 +23,7 @@ repositories {
 val build by tasks.getting
 val jar by tasks.getting
 
-val sourcesJar by tasks.creating(Jar::class){
+val sourcesJar by tasks.creating(Jar::class) {
     from(sourceSets.main.get().allSource)
     archiveClassifier.set("sources")
 
@@ -61,11 +62,56 @@ val prepareSpigotPlugins by tasks.getting(Copy::class) {
 publishing {
     publications {
         create<MavenPublication>("library") {
+            artifactId = "bukkitcoroutines"
             artifact(jar)
             artifact(dokkaHtmlJar)
             artifact(dokkaJavadocJar)
             artifact(sourcesJar)
+            pom {
+                name.set("Bukkit Coroutines")
+                description.set("Extensions to the bukkit scheduler to work with kotlin coroutines")
+                url.set("https://github.com/romangraef/bukkitcoroutines")
+                licenses {
+                    license {
+                        name.set("ISC License")
+                        url.set("https://opensource.org/licenses/isc-license.txt")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("nea89")
+                        name.set("Nea Gräf")
+                        email.set("hello@nea89.moe")
+                    }
+                }
+                scm {
+                    connection.set("scm:git:git://github.com/romangraef/bukkitcoroutines.git")
+                    developerConnection.set("scm:git:ssh://github.com/romangraef/bukkitcoroutines.git")
+                    url.set("https://github.com/romangraef/bukkitcoroutines")
+                }
+            }
+            repositories {
+                maven {
+                    name = "OSSRH"
+                    setUrl("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+                    credentials {
+                        username = project.findProperty("OSSRH_USERNAME") as? String ?: return@credentials
+                        password = project.findProperty("OSSRH_PASSWORD") as? String ?: return@credentials
+                    }
+                }
+            }
         }
+    }
+}
+
+signing {
+    useGpgCmd()
+    sign(publishing.publications["library"])
+}
+
+tasks.withType(Sign::class) {
+    onlyIf {
+        gradle.taskGraph.hasTask("publish")
     }
 }
 

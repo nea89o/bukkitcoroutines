@@ -1,2 +1,2 @@
-rootProject.name = "kotlinbukkit"
+rootProject.name = "bukkitcoroutines"
 
