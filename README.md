@@ -1,8 +1,3 @@
-# This repository
-
-This is for now just a POC repo for using Kotlin continuations, but i plan on using this to make a general library for
-kotlin integrations into bukkit.
-
 ## Bukkit Kotlin Coroutines
 
 Interact with the bukkit scheduler in a very kotlin-y way:
@@ -38,25 +33,20 @@ would produce the following output:
 [23:21:45 INFO]: [bukkitcoroutines] After switchToMain | is primary thread: true
 ```
 
-Some functions I implemented in this:
+## Documentation
 
-Creating a coroutine: all of these methods need to be called with plugin.XXX(block) where block is
-a `suspend BukkitCoroutine<T>.()->T`:
+Javadoc is available
+on [Github Pages](https://romangraef.github.io/bukkitcoroutines/bukkitcoroutines/moe.nea89.bukkitcoroutines/index.html)
 
-```
-launchCoroutineAsync        - launches a coroutine in an async task, will return immediately
-launchCoroutineOnMain       - launches a coroutine in the main thread (will be started later on), will return immediately
-startCoroutineOnSameThread  - starts a coroutine in the current thread, will return once the context of the coroutine 
-                              is switched, or the coroutine is finished
-```
+## Installation
 
-Controlling the flow of the coroutine: all of these functions have to be called on a `BukkitCoroutine<T>`
+This code should be shaded into your plugin: ![[https://search.maven.org/artifact/moe.nea89/bukkitcoroutines](https://search.maven.org/artifact/moe.nea89/bukkitcoroutines)](https://img.shields.io/maven-central/v/moe.nea89/bukkitcoroutines)
 
-```
-switchToAsync()                         - continues the coroutine on the async thread, returns immediately if already in an async context
-switchToMain()                          - continues the coroutine on the main thread, returns immediately if already in the main thread
-callOnMain(block)                       - continues on the same thread, but runs the block on the main thread before continuing
-callOnAsync(block)                      - continues on the same thread, but runs the block on the async thread before continuing
-waitAndContinueInSameThread(duration)   - continues on the same thread, after waiting that specified duration
+```kotlin
+implementation("moe.nea89:bukkitcoroutines:1.0.0")
+
+// If you want to be compatible with other plugins, make sure to relocate us:
+
+shadowJar.relocate("moe.nea89.bukkitcoroutines", "yourpluginid.relocated.bukkitcoroutines")
 ```
 
