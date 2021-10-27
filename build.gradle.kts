@@ -12,7 +12,7 @@ plugins {
 }
 
 group = "moe.nea89"
-version = "1.0.0"
+version = "2.0.0"
 
 repositories {
     maven("https://libraries.minecraft.net/")

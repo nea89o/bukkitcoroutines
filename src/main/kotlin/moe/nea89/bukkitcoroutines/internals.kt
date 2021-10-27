@@ -3,9 +3,8 @@ package moe.nea89.bukkitcoroutines
 import org.bukkit.Bukkit
 import org.bukkit.plugin.Plugin
 import java.util.concurrent.Callable
-import kotlin.coroutines.Continuation
-import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
+import java.util.concurrent.CompletableFuture
+import kotlin.coroutines.*
 import kotlin.time.ExperimentalTime
 
 
@@ -80,3 +79,20 @@ internal fun Plugin.continueOnMain(cont: Continuation<Unit>, force: Boolean = tr
         }
     }
 }
+
+internal fun <T> Plugin.createCoroutine(block: suspend () -> T): Pair<CompletableFuture<T>, Continuation<Unit>> {
+    val future = CompletableFuture<T>()
+    val coroutine = block.createCoroutine(object : Continuation<T> {
+        override val context: CoroutineContext
+            get() = EmptyCoroutineContext
+
+        override fun resumeWith(result: Result<T>) {
+            if (result.isFailure)
+                future.completeExceptionally(result.exceptionOrNull())
+            else
+                future.complete(result.getOrNull())
+        }
+    })
+    return future to coroutine
+}
+

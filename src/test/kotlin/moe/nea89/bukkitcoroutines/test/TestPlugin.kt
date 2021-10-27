@@ -1,6 +1,6 @@
 package moe.nea89.bukkitcoroutines.test
 
-import moe.nea89.bukkitcoroutines.startCoroutineOnSameThread
+import moe.nea89.bukkitcoroutines.*
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 import kotlin.time.Duration
