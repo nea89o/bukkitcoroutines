@@ -111,7 +111,7 @@ signing {
 
 tasks.withType(Sign::class) {
     onlyIf {
-        gradle.taskGraph.hasTask("publish")
+        gradle.taskGraph.allTasks.any { "publish" in it.name }
     }
 }
 
